@@ -5,8 +5,7 @@
 	list-style: none;
 }
 
-
-						/*Шрифты*/
+/*Шрифты*/
 
 @font-face {
     font-family: "MyriadProRegular";
@@ -67,7 +66,8 @@
     font-style: normal;
     font-weight: normal;
 }
-						 /*Переменные*/
+
+/*Переменные*/
 
 @conteiner-max-width: 1240px;
 @conteiner-min-width: 100px;
@@ -84,7 +84,7 @@
 @opensans:"OpenSansRegular";
 
 							
-						/*Mixins*/
+/*Mixins*/
 
 .radius (@radius) {
 	-webkit-border-radius: @radius;
@@ -160,7 +160,8 @@ a {
 .block {
 	padding: 120px 0;
 }
-					/* Header */
+
+/* Header */
 
 .logo {
 	float: left;
@@ -175,6 +176,23 @@ a {
 	span {
 		color: #ffce54;
 	}
+}
+
+.icon_menu {
+	width: 40px;
+	height: 35px;
+
+	display: none;
+	cursor: pointer;
+}
+
+.icon-bar {
+	display: block;
+	height: 6px;
+	width: 40px;
+	background-color: #68aee0;
+	
+	margin-bottom: 6px;
 }
 
 .menu {
@@ -198,14 +216,14 @@ a {
 	font: 16px @myriad;
 	text-transform: uppercase;
 	color: #868b94;
-	.transition;
+	.transition();
 
 	&:hover {
 		color: lighten(#868b94, 20%);
 	} 
 }
 
-					/*Banner*/
+/*Banner*/
 
 .banner {
 	background: url(../images/banner-bg.png) no-repeat center top;
@@ -243,28 +261,17 @@ a {
 	font: 18px @ubuntumedium;
 }
 
-.registration_button {
+.registration_item span {
 		background: #ffce54;
+		display: inline-block;
 		color: @white;
 		font: 16px @ubuntubold;
-		cursor: pointer;
 		
-		width: 55px;
-		height: 25px;
+		width: 40px;
+    	height: 18px;
 		.radius(5px);
 		margin-bottom: 30px;
-		position: relative;
-
-		.transition(background, 0.3s, ease-in, 0s);
-
-	&:hover {
-		background: darken(#ffce54, 10%);
-	}
-
-	&:active {
-		box-shadow: 2px 2px 6px darken(#ffce54, 25%) inset;
-	    top: 1px;
-	}
+		padding: 4px 6px; 
 }
 
 .text_input {
@@ -308,7 +315,7 @@ a {
 	top: 90px;
 }
 
-					/*Clients*/
+/*Clients*/
 
 .clients {
 	background: @grey;
@@ -318,12 +325,12 @@ a {
 	}
 }		
 
-.clients_item {
+.clients_link {
 	display: inline-block;
 	vertical-align: middle;
-	padding: 60px 52px 50px 52px;
+	padding: 60px 37px 50px 37px;
 
-	.transition;
+	.transition();
 
 	&:hover {
 		.box-shadow(0, 0, 16px, 0px, rgba(56, 61, 59, 0.4));
@@ -331,22 +338,21 @@ a {
 	}
 }
 
-
-					/*Advantages*/
+/*Advantages*/
 
 .advantage {
 	background-color: @white;
 	background: url(../images/macbook.png) no-repeat right 265px;
 }
 
-.advantage_title {
+.title {
 	text-align: center;
 	font: 40px @verdana;
 	text-transform: uppercase;
 	color: #6c727d;
 }
 
-.advantages_content {
+.advantage_content {
 	float: left;
 	width: @conteiner-max-width/2.5;
 	text-align: left;
@@ -355,46 +361,30 @@ a {
 	padding-left: 20px;
 }
 
-.advantage_post_title {
+.post_title {
 	font: 22px @myriad;
 	color: #424c5e;
+
+	position: relative;
+    top: 4px;
+    left: 13px;
 }	
 
-.secure_platform {
-	padding: 2px 0 15px 56px;
-
-	background: url(../images/advantage-1.png) no-repeat left top;
-}
-    
-.stopwatch {
-	position: relative;
-	padding: 12px 0 15px 76px;
-	left: -20px;
-  
-	background: url(../images/advantage-2.png) no-repeat left top;
+.post {
+	&:after {
+		.clear();
+	}
 }
 
-.tweet {
-	position: relative;
-	padding: 12px 0 15px 76px;
-	left: -20px;
-  
-	background: url(../images/advantage-3.png) no-repeat left top;
-}
+.post img {
+	float: left;
+} 
 
-.features {
-	position: relative;
-	padding: 12px 0 15px 66px;
-	left: -10px;
-  
-	background: url(../images/advantage-4.png) no-repeat left top;
-}
-
-.advantage_text {
+.post p {
 	font: 14px/1.7 @opensans;
 	color: #9499a2;
 
-	padding-bottom: 30px;
+	padding: 25px 0 30px 0;
 }
 
 .macbook {
@@ -404,27 +394,19 @@ a {
 	z-index: 50;
 }
 
-					/*Support*/
+/*Support*/
 
 .support {
 	background: url(../images/ships-bg.png) no-repeat center right;
 	background-size: cover;
 }					
 
-.support_title {
-	text-align: center;
-	font: 40px @verdana;
-	text-transform: uppercase;
-	color: #6c727d;
-}
-
-.support_item {
+.support_content {
 	width: 57%;
-
 	padding-left: 20px;
 }
 
-.support_item_title {
+.support_title {
 	font: 28px @ubunturegular;
 	color: #455061;
 
@@ -434,7 +416,7 @@ a {
 	background: url(../images/support.png) no-repeat center left;
 }
 
-.support_text {
+.support p {
 	font: 16px/2 @opensans;
 	color: #747b85;
 }
@@ -460,7 +442,7 @@ a {
 	}
 }
 
-			/*Footer*/
+/*Footer*/
 
 .footer_menu {
 	float: left;
@@ -478,13 +460,14 @@ a {
 
 	&:hover {
 		border-radius: 1px solid #64a4d7;
+		
 		.radius(50%);
 	}
 }		
 
 /*Responsive*/
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1280px) {
 	.advantage {
 		background-position: right 385px;
 	  	background-size: 600px auto;
@@ -493,10 +476,8 @@ a {
 
 @media screen and (max-width: 1150px) {
 	.banner {
-	
 		.container {
-			background: url(../images/iphone.png) no-repeat right bottom;
-			background-size: 450px auto;	
+			background-size: 400px auto;	
 		}
 	}	
 
@@ -507,7 +488,11 @@ a {
 }
 
 
-@media screen and (max-width: 1000px) { 
+@media screen and (max-width: 1024px) { 
+	.block {
+    	padding: 60px 0;
+	}
+
 	.banner {
 	
 		.container {
@@ -532,16 +517,24 @@ a {
 		padding: 120px 0 222px 0;
 	}
 
-	.advantages_content {
-		width: 90%;
-		text-align: center;
+	.advantage_content {
+		width: 100%;
+		padding-left: 0;
 	}
 
-	.support_item {
-    	width: 80%;
-    }
+	.advantage {
+		.post {
+			width: 48%;
+		    display: inline-block;
+		    text-align: left;
+			margin-right: 3%
+		}	
+		.post:nth-of-type(2n+2) {
+				margin-right: 0;
+		} 
+	}
 
-	.menu_list_item{
+	.menu_list_item {
 		padding-left: 20px;
 
 		&:first-child {
@@ -550,22 +543,58 @@ a {
     }
 }
 
-@media screen and (max-width: 800px) { 
+@media screen and (max-width: 768px) { 
 	.logo {
-		float: none;
 		padding: 30px 0 26px 0px;
 		text-align: center;
 	}
 
-	.menu {
-	    float: none;
-	    text-align: center;
-	    padding: 0;
-		
-		.menu_list_item {
-	    	float: none;
-			padding: 0 0 10px 0; 
+	.icon_menu {
+		display: block;
+		float: right;
+		padding-top: 35px;
+	}
+
+	.header{
+		.menu {
+		    float: none;
+		    display: none;
+		  	text-align: center;
+	    	padding: 0;
+		    position: absolute;
+		    width: 99.5%;
+		    left: 0;
+		    top: 100px;
+
+		    background: #0170be;
+			border: 1px solid #000;
+				
+			.menu_list_item {
+			    float: none;
+				border-bottom: 1px solid #000;
+				padding-left: 0;
+
+				&:last-child {
+					border-bottom: none;
+				}
+
+				.menu_link {
+					display: block;
+					color: #fff;
+					font-size: 20px;
+					padding: 20px 0 25px 0;
+
+					&:hover {
+						.box-shadow(0, 0, 16px, 0px, rgba(56, 61, 59, 0.4));
+						background-color: lighten(#0170be, 10%);
+					}
+				}
+			}
 		}
+	}
+	
+	.clients_link {
+		padding: 25px 52px;
 	}
 	
 	.block_title {
@@ -581,28 +610,38 @@ a {
 	}
 
 	.block {
-		padding: 80px 0;
+		padding: 60px 0;
 	}
 	
 	.advantage {
-		padding: 120px 0 250px 0;
+		padding: 60px 0 250px 0;
 	}
 
-	.advantage_title {
-    	font-size: 35px;
+	.advantage {
+		.post {
+			width: 90%;
+		    display: block;
+		}
 	}
 
-	.support_item {
+	.advantage_content {
+		margin-top: 60px;
+	}
+
+	.post p {
+		text-align: left;
+	}
+
+	.support_content {
     	width: 100%;
+
+    }
+    .support_title {
+    	margin: 50px 0 35px 0;	
     }
 
-    .support_item_title {
-    	margin: 100px 0 35px 0;	
-    }
-
-    .support_text {
-    	ont-size: 14px;
-    	line-height: 1.5;
+    .support p {
+    	font-size: 14px;
     }
 
     .footer_menu {
@@ -610,11 +649,10 @@ a {
 	    padding: 30px 0;
 	    text-align: center;
 		
-			.menu_list_item {
+		.menu_list_item {
 	    	float: none;
 	    	display: inline;
 		}
-
 	}
 
 	.social {
@@ -624,9 +662,8 @@ a {
 	}
 }	
 
-@media screen and (max-width: 470px) { 
+@media screen and (max-width: 480px) { 
 	.banner {
-	
 		.container {
 			background: url(../images/iphone.png) no-repeat center bottom;
 			background-size: 200px auto;	
@@ -641,20 +678,24 @@ a {
 		padding: 100px 0 300px 0;
 	} 
 
+	.signup_button {
+		width: 100%;
+	}
+
 	.advantage {
 		background-size: 300px auto;
 	}
 
-	.support_title, .advantage_title {
-		font-size: 30px;
+	.title {
+		font-size: 27px;
 	}
 
-	.support_item_title {
+	.support_title {
 		font-size: 22px;
 	}
 
 	.text_input {
 		margin: 0 0 10px 0;
-		width: 90%;
+		width: 93%;
 	}
 }

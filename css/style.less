@@ -5,7 +5,7 @@
 	list-style: none;
 }
 
-/*Шрифты*/
+/*********Шрифты*********/
 
 @font-face {
     font-family: "MyriadProRegular";
@@ -67,7 +67,7 @@
     font-weight: normal;
 }
 
-/*Переменные*/
+/*********Переменные*********/
 
 @conteiner-max-width: 1240px;
 @conteiner-min-width: 100px;
@@ -86,19 +86,19 @@
 							
 /*Mixins*/
 
-.radius (@radius) {
+.radius(@radius) {
 	-webkit-border-radius: @radius;
 	-moz-border-radius: @radius;
 	border-radius: @radius;
 }
 
-.box-shadow (@x, @y, @blur, @spread, @color) {
+.box-shadow(@x, @y, @blur, @spread, @color) {
 	-webkit-box-shadow: @arguments;
 	-moz-box-shadow: @arguments;
 	box-shadow: @arguments;
 }
  
-.transition (@property: all, @duration: 0.6s, @function: ease, @delay: 0s) {
+.transition(@property: all, @duration: 0.6s, @function: ease, @delay: 0s) {
 	-webkit-transition: @arguments;
 	-moz-transition: @arguments;
 	-o-transition: @arguments;
@@ -118,18 +118,27 @@
 
     &.sprite-facebook {
         .stitches-sprite(-5px, -5px, 11px, 22px);
+        position: relative;
+    	top: 6px;
+    	left: 11px;
     }
 
     &.sprite-google-plus {
         .stitches-sprite(-26px, -5px, 20px, 22px);
+        position: relative;
+    	top: 7px;
+    	left: 9px;  
     }
 
     &.sprite-twitter {
         .stitches-sprite(-56px, -5px, 20px, 18px);
+        position: relative;
+    	top: 9px;
+    	left: 8px;
     }
 }
 
-/*Общие стили */
+/*********Общие стили*********/
 
 body {
 	background-color: @white;
@@ -161,11 +170,17 @@ a {
 	padding: 120px 0;
 }
 
-/* Header */
+/*********Header*********/
 
 .logo {
 	float: left;
 	padding: 30px 0 26px 20px;
+
+	&:hover {
+		background: #f9f9f9;
+		
+		.transition(all, 0.6s, linear, 0s);
+	}
 }
 
 .logo_link {
@@ -181,7 +196,6 @@ a {
 .icon_menu {
 	width: 40px;
 	height: 35px;
-
 	display: none;
 	cursor: pointer;
 }
@@ -191,7 +205,6 @@ a {
 	height: 6px;
 	width: 40px;
 	background-color: #68aee0;
-	
 	margin-bottom: 6px;
 }
 
@@ -216,6 +229,7 @@ a {
 	font: 16px @myriad;
 	text-transform: uppercase;
 	color: #868b94;
+	
 	.transition();
 
 	&:hover {
@@ -223,7 +237,7 @@ a {
 	} 
 }
 
-/*Banner*/
+/*********Banner*********/
 
 .banner {
 	background: url(../images/banner-bg.png) no-repeat center top;
@@ -241,9 +255,7 @@ a {
 .banner_content {
 	float: left;
 	padding: 235px 0;
-	
-	color: @white;
-	
+	color: @white;	
 }
 
 .block_title {
@@ -264,14 +276,14 @@ a {
 .registration_item span {
 		background: #ffce54;
 		display: inline-block;
-		color: @white;
-		font: 16px @ubuntubold;
-		
 		width: 40px;
     	height: 18px;
-		.radius(5px);
-		margin-bottom: 30px;
+    	margin-bottom: 30px;
 		padding: 4px 6px; 
+		.radius(5px);
+		
+		color: @white;
+		font: 16px @ubuntubold;	
 }
 
 .text_input {
@@ -285,16 +297,15 @@ a {
 }
 
 .signup_button {
+	position: relative;
 	background: #77c344;
 	color: @white;
-	font: 18px @ubuntumedium;
-	cursor: pointer;
-		
 	width: 113px;
 	height: 54px;
 	.radius(5px);
-	position: relative;
 	
+	font: 18px @ubuntumedium;
+	cursor: pointer;
 	text-transform: uppercase;
 	
 	.transition(background, 0.4s, ease-in, 0s);
@@ -315,7 +326,7 @@ a {
 	top: 90px;
 }
 
-/*Clients*/
+/*********Clients*********/
 
 .clients {
 	background: @grey;
@@ -338,7 +349,7 @@ a {
 	}
 }
 
-/*Advantages*/
+/*********Advantages*********/
 
 .advantage {
 	background-color: @white;
@@ -356,18 +367,17 @@ a {
 	float: left;
 	width: @conteiner-max-width/2.5;
 	text-align: left;
-	
 	margin-top: 130px;
 	padding-left: 20px;
 }
 
 .post_title {
-	font: 22px @myriad;
-	color: #424c5e;
-
 	position: relative;
     top: 4px;
     left: 13px;
+	
+	font: 22px @myriad;
+	color: #424c5e;
 }	
 
 .post {
@@ -391,10 +401,9 @@ a {
 	float: right;
 	position: relative;
 	top: -630px;
-	z-index: 50;
 }
 
-/*Support*/
+/*********Support*********/
 
 .support {
 	background: url(../images/ships-bg.png) no-repeat center right;
@@ -407,13 +416,12 @@ a {
 }
 
 .support_title {
+	background: url(../images/support.png) no-repeat center left;
 	font: 28px @ubunturegular;
 	color: #455061;
 
 	margin: 130px 0 35px 0;	
 	padding: 8px 0 0 85px; 
-
-	background: url(../images/support.png) no-repeat center left;
 }
 
 .support p {
@@ -423,26 +431,24 @@ a {
 
 .pages {
 	text-align: center;
-
 	margin-top: 37px;
 }
-.page_link {
-	display: inline-block;
-	padding: 4px 10px 5px 9px;
 
+.page_link {
+	padding: 4px 10px 5px 9px;
 	color: #bec1c7;
 	font: 15px @ubuntumedium; 
+	
 	.radius(50%);
 	.transition(all, 0.4s, ease, 0s);
 
 	&:hover {
-		.radius(50%);
 		background: #64a4d7;
 		color: @white;
 	}
 }
 
-/*Footer*/
+/*********Footer*********/
 
 .footer_menu {
 	float: left;
@@ -456,16 +462,20 @@ a {
 
 .sprite_link {
 	display: inline-block;
-	margin-left: 30px;
+	margin-left: 10px;
+    width: 35px;
+    height: 35px;
+    border: 1px solid transparent;
+		
+	.radius(50%);
+	.transition(background, 0.6s, ease, 0s);
 
 	&:hover {
-		border-radius: 1px solid #64a4d7;
-		
-		.radius(50%);
+		background: darken(#f3f3f5, 10%);
 	}
 }		
 
-/*Responsive*/
+/*********Responsive*********/
 
 @media screen and (max-width: 1280px) {
 	.advantage {
@@ -494,10 +504,8 @@ a {
 	}
 
 	.banner {
-	
 		.container {
-			background: url(../images/iphone.png) no-repeat center bottom;
-			background-size: 250px auto;	
+			background: url(../images/iphone-2.png) no-repeat center bottom;
 		}
 	}
 
@@ -505,15 +513,12 @@ a {
 		float: none;
 		width: 100%;
 		text-align: center;
-
 		padding: 100px 0 360px 0;
 	} 
 
 	.advantage {
 		background-color: @white;
 		background: url(../images/macbook-2.png) no-repeat center bottom;
-		background-size: 400px auto;
-		
 		padding: 120px 0 222px 0;
 	}
 
@@ -557,16 +562,15 @@ a {
 
 	.header{
 		.menu {
+			position: absolute;
+			width: 99.5%;
 		    float: none;
 		    display: none;
 		  	text-align: center;
 	    	padding: 0;
-		    position: absolute;
-		    width: 99.5%;
 		    left: 0;
 		    top: 100px;
-
-		    background: #0170be;
+		   	background: #0170be;
 			border: 1px solid #000;
 				
 			.menu_list_item {
@@ -619,7 +623,7 @@ a {
 
 	.advantage {
 		.post {
-			width: 90%;
+			width: 100%;
 		    display: block;
 		}
 	}
@@ -665,7 +669,6 @@ a {
 @media screen and (max-width: 480px) { 
 	.banner {
 		.container {
-			background: url(../images/iphone.png) no-repeat center bottom;
 			background-size: 200px auto;	
 		}
 	}
@@ -688,6 +691,16 @@ a {
 
 	.title {
 		font-size: 27px;
+	}
+
+	.post img {
+    	float: none;
+    	display: block;
+    	margin: 0 auto;
+	}
+
+	.post_title {
+		text-align: center;
 	}
 
 	.support_title {
